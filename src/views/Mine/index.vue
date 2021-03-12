@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div id="main">
     <Header title="我的喵喵"></Header>
     <Login></Login>
     <Tabbar></Tabbar>
-
   </div>
 </template>
 

@@ -10,7 +10,7 @@ export default {
     return {
       moviedata: [],
       isLoading: true,
-      prevCityId: -1
+      prevCityId: -2
     }
   },
   components: {

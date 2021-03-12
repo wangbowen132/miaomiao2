@@ -1,20 +1,21 @@
 <template>
-  <div id="content">
-    <Header title="喵喵影院"></Header>
-    <div class="cinema_menu">
-      <div class="city_switch">
-        全城 <i class="iconfont icon-lower-triangle"></i>
+  <div id="main">
+    <div id="content">
+      <Header title="喵喵影院"></Header>
+      <div class="cinema_menu">
+        <div class="city_switch">
+          全城 <i class="iconfont icon-lower-triangle"></i>
+        </div>
+        <div class="brand_swtich">
+          品牌 <i class="iconfont icon-lower-triangle"></i>
+        </div>
+        <div class="feature_switch">
+          特色 <i class="iconfont icon-lower-triangle"></i>
+        </div>
       </div>
-      <div class="brand_swtich">
-        品牌 <i class="iconfont icon-lower-triangle"></i>
-      </div>
-      <div class="feature_switch">
-        特色 <i class="iconfont icon-lower-triangle"></i>
-      </div>
+      <CityList></CityList>
+      <Tabbar></Tabbar>
     </div>
-    <CityList></CityList>
-    <Tabbar></Tabbar>
-
   </div>
 </template>
 

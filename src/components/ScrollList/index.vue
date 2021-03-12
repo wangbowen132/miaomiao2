@@ -48,5 +48,5 @@ export default {
 
 <style lang="scss" scoped>
 
-.wrapper{height: 100%; overflow: hidden;}
+.wrapper{height: 100%; overflow: auto;}
 </style>
