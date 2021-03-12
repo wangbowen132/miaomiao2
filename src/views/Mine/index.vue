@@ -2,18 +2,22 @@
   <div>
     <Header title="我的喵喵"></Header>
     <Login></Login>
+    <Tabbar></Tabbar>
+
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header"
 import Login from "@/components/Login"
+import Tabbar from "@/components/Tabbar"
 
 export default {
   name: "Mine",
   components: {
     Header,
-    Login
+    Login,
+    Tabbar
   }
 }
 </script>

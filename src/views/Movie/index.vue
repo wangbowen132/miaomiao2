@@ -1,23 +1,26 @@
 <template>
-  <div id="content">
+  <div id="main">
     <Header title="喵喵电影"></Header>
-    <div class="movie_menu">
-      <router-link tag="div" to="/movie/city" class="city_name active">
-        <span>{{$store.state.city.nm}}</span><i class="iconfont icon-lower-triangle"></i>
-      </router-link>
-      <div class="hot_swtich">
-        <router-link tag="div" to="/movie/nowPlaying" class="hot_item">正在热映</router-link>
-        <router-link tag="div" to="/movie/comingSoon" class="hot_item">即将上映</router-link>
+    <div id="content">
+      <div class="movie_menu">
+        <router-link tag="div" to="/movie/city" class="city_name active">
+          <span>{{$store.state.city.nm}}</span><i class="iconfont icon-lower-triangle"></i>
+        </router-link>
+        <div class="hot_swtich">
+          <router-link tag="div" to="/movie/nowPlaying" class="hot_item">正在热映</router-link>
+          <router-link tag="div" to="/movie/comingSoon" class="hot_item">即将上映</router-link>
+        </div>
+        <router-link tag="div" to="/movie/search" class="search_entry">
+          <i class="iconfont icon-sousuo"></i>
+        </router-link>
       </div>
-      <router-link tag="div" to="/movie/search" class="search_entry">
-        <i class="iconfont icon-sousuo"></i>
-      </router-link>
+      <keep-alive>
+        <router-view>
+        </router-view>
+      </keep-alive>
     </div>
-
-    <keep-alive>
-      <router-view>
-      </router-view>
-    </keep-alive>
+    <Tabbar></Tabbar>
+    <router-view name="detail"></router-view>
   </div>
 </template>
 
@@ -25,11 +28,13 @@
 import Header from "@/components/Header"
 import {messageBox} from "@/components/JS"
 import jsonp from 'jsonp'
+import Tabbar from "@/components/Tabbar"
 
 export default {
   name: "Movie",
   components: {
-    Header
+    Header,
+    Tabbar
   },
   mounted() {
     // jsonp参数: url  url传参  回调名称

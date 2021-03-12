@@ -22,8 +22,6 @@ export default {
     
     if(newId === this.prevCityId){ return; }
 
-    console.log("重新加载")
-
     this.axios.get(`/ajax/ajax/comingList?ci=${newId}&token=`).then(res => {
       if(res.statusText === "OK"){
         this.isLoading = false;

@@ -16,7 +16,7 @@ export default {
     MovieList
   },
   mounted() {
-    this.axios.get("/ajax/ajax/movieOnInfoList?token=&optimus_uuid=94144F907D8A11EB82EC9797BBCD89ABD7C1EA8D9C2149769E6DE86735E343AE").then(res => {
+    this.axios.get("/ajax/ajax/movieOnInfoList?token=").then(res => {
       if(res.statusText === "OK"){
         this.isLoading = false;
         this.moviedata = res.data.movieList;

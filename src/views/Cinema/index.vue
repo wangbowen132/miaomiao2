@@ -13,18 +13,23 @@
       </div>
     </div>
     <CityList></CityList>
+    <Tabbar></Tabbar>
+
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header"
 import CityList from '@/components/CityList'
+import Tabbar from "@/components/Tabbar"
+
 
 export default {
   name: "Cinema",
   components: {
     Header,
-    CityList
+    CityList,
+    Tabbar
   }
 }
 </script>

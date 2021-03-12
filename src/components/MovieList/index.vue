@@ -4,11 +4,11 @@
     <ScrollList v-else :handleScroll="handleScroll" :handleTouchEnd="handleTouchEnd">
       <ul ref="ul_node">
         <li>{{updata}}</li>
-        <li v-for="movie in (newlist.length > 0 ? newlist : moviedata)" :key="movie.id" @click="handleClick">
-          <div class="pic_show"><img :src="movie.img.replace('w.h','128.180')"></div>
+        <li v-for="movie in (newlist.length > 0 ? newlist : moviedata)" :key="movie.id">
+          <div class="pic_show" @click="handleToDetail(movie.id)"><img :src="movie.img.replace('w.h','128.180')"></div>
           <div class="info_list">
             <div class="box-flex">
-              <h2 class="title">{{movie.nm}}</h2>
+              <h2 class="title" @click="handleToDetail(movie.id)">{{movie.nm}}</h2>
               <span :class="'version ' + movie.version" v-if="movie.version"></span>
             </div>
             <p v-if="movie.sc">观众评 <span class="grade">{{movie.sc}}</span></p>
@@ -40,7 +40,7 @@ export default {
     },
     moviedata: {
       type: Array,
-      default: []
+      default: null
     },
     isLoading: {
       type: Boolean,
@@ -54,9 +54,6 @@ export default {
     }
   },
   methods: {
-    handleClick(){
-      console.log("click")
-    },
     handleScroll(pos){
       if(pos.y > 30){
         this.updata = '正在更新中'
@@ -76,6 +73,14 @@ export default {
           }
         })
       }
+    },
+    handleToDetail(id){
+      if(this.sellname === '购票'){
+        this.$router.push(`/movie/detail/1/${id}`)
+
+      }else{
+        this.$router.push(`/movie/detail/2/${id}`)
+      }
     }
   }
 }
@@ -84,7 +89,7 @@ export default {
 <style lang="scss" scoped>
 .movie_body ul{  margin:0 12px; overflow: hidden; }
 .movie_body ul li{ margin-top:12px; display: flex; align-items:center; border-bottom: 1px #e6e6e6 solid; padding-bottom: 10px;}
-.movie_body .pic_show{ width:64px; height: 90px;}
+.movie_body .pic_show{ width:64px; height: 90px; overflow: hidden;}
 .movie_body .pic_show img{ width:100%;}
 .movie_body .info_list { margin-left: 10px; flex:1; position: relative;}
 .movie_body .info_list h2{ font-size: 17px; line-height: 24px;/*  width:150px;  */overflow: hidden; white-space: nowrap; text-overflow:ellipsis;}
