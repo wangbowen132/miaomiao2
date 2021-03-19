@@ -19,7 +19,9 @@ export default {
   activated() {
 
     var newId = localStorage.getItem('newId');
-    
+    if(newId == null){
+      newId = 1;
+    }
     if(newId === this.prevCityId){ return; }
 
     this.axios.get(`/ajax/ajax/comingList?ci=${newId}&token=`).then(res => {

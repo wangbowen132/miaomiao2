@@ -8,14 +8,14 @@ module.exports = {
           "^/ajax": ""
         }
       },
-      "/rider": {
-        target: 'https://pianku.api.mgtv.com',
-        changeOrigin: true
-      },
-      '/location': {
-        target: 'https://api.map.baidu.com/',
-        changeOrigin: true
-      }
+      // "/rider": {
+      //   target: 'https://pianku.api.mgtv.com',
+      //   changeOrigin: true
+      // },
+      // '/location': {
+      //   target: 'https://api.map.baidu.com/',
+      //   changeOrigin: true
+      // }
     }
   }
 }
