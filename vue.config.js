@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: '/miaomiao/',
   devServer: {
     proxy: {
       "/ajax" : {
@@ -7,15 +8,7 @@ module.exports = {
         pathRewrite: {
           "^/ajax": ""
         }
-      },
-      // "/rider": {
-      //   target: 'https://pianku.api.mgtv.com',
-      //   changeOrigin: true
-      // },
-      // '/location': {
-      //   target: 'https://api.map.baidu.com/',
-      //   changeOrigin: true
-      // }
+      }
     }
   }
 }
