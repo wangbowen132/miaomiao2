@@ -1,21 +1,19 @@
 <template>
   <div id="main">
-    <Header title="我的喵喵"></Header>
-    <Login></Login>
-    <Tabbar></Tabbar>
+    <Header title="我的喵喵" />
+    <router-view />
+    <Tabbar />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header"
-import Login from "@/components/Login"
 import Tabbar from "@/components/Tabbar"
 
 export default {
   name: "Mine",
   components: {
     Header,
-    Login,
     Tabbar
   }
 }

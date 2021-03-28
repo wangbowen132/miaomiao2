@@ -1,17 +1,23 @@
 <template>
   <footer id="footer">
 			<ul>
-        <router-link to="/movie" tag="li">
-          <i class="iconfont icon-dianying"></i>
-          <p>电影</p>
+        <router-link custom  to="/movie" v-slot="{ navigate, isActive }">
+          <li role="link" @click="navigate" :active="isActive" :class="isActive?'router-link-active':''">
+            <i class="iconfont icon-dianying"></i>
+            <p>电影</p>
+          </li>
         </router-link>
-        <router-link to="/cinema" tag="li">
-          <i class="iconfont icon-yingyuan"></i>
-          <p>影院</p>
+        <router-link custom  to="/cinema" v-slot="{ navigate, isActive }">
+          <li role="link" @click="navigate" :active="isActive" :class="isActive?'router-link-active':''">
+            <i class="iconfont icon-yingyuan"></i>
+            <p>影院</p>
+          </li>
         </router-link>
-        <router-link to="/mine" tag="li">
-          <i class="iconfont icon-wode"></i>
-          <p>我的</p>
+        <router-link custom  to="/mine" v-slot="{ navigate, isActive }">
+          <li role="link" @click="navigate" :active="isActive" :class="isActive?'router-link-active':''">
+            <i class="iconfont icon-wode"></i>
+            <p>我的</p>
+          </li>
         </router-link>
 			</ul>
 		</footer>
